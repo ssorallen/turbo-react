@@ -1,0 +1,22 @@
+body {
+  font-family: Tahoma, sans-serif;
+}
+
+h3 {
+  margin: 0;
+}
+
+.panel {
+  background-color: #64A8D1;
+  border: 1px solid #245A7A;
+  border-radius: 3px;
+  color: white;
+  padding: 15px 20px;
+  transition: all 1.5s;
+}
+
+.panel-warning {
+  background-color: #FFDC73;
+  border-color: #BF9B30;
+  color: black;
+}
