@@ -2,10 +2,6 @@
   name: Turbolinks + React DOM Diffs
   authors:
     - Ross Allen
-<<<<<<< HEAD
-  js_wrap: l
-=======
->>>>>>> parent of 28566c5... Test jsFiddle support for JS in footer
   resources:
     - http://fb.me/react-0.4.1.js
     - http://fb.me/JSXTransformer-0.4.1.js
