@@ -2,6 +2,7 @@
   name: Turbolinks + React DOM Diffs
   authors:
     - Ross Allen
+  js_wrap: b
   resources:
     - http://fb.me/react-0.4.1.js
     - http://fb.me/JSXTransformer-0.4.1.js
