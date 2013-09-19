@@ -4,7 +4,9 @@
   <head>
     <meta charset="utf-8">
     <title>Turbo React</title>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="author" href="https://twitter.com/ssorallen">
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <style>
       .panel,
       .panel-heading {
@@ -16,9 +18,9 @@
       <% end %>
     </style>
 
-    <script src="http://fb.me/react-0.4.1.js"></script>
-    <script src="http://fb.me/JSXTransformer-0.4.1.js"></script>
-    <script src="/turbo-react-0.0.1.js"></script>
+    <script src="/react-0.4.1.min.js"></script>
+    <script src="/jsxtransformer-0.4.1.js"></script>
+    <script src="/reactize-0.0.1.js"></script>
     <script src="/turbolinks-1.4.0.js"></script>
   </head>
   <body>
@@ -46,20 +48,37 @@
           <div class="progress progress-striped active">
             <div class="progress-bar progress-bar-success width<%= rand(21) * 5 %>"></div>
           </div>
+          <a class="btn btn-primary" href="/">Re-request this page</a>
+          <p class="text-muted" title="<%= @request_time.to_s %>">
+            Requested at <%= @request_time.strftime("%Y-%m-%d %H:%M:%S") %>
+          </p>
+
+          <h3>What it's doing</h3>
+          <p>"Re-request this page" is just a link to the current page. When you
+            click it, Turbolinks intercepts the GET request and fetchs the
+            full page via XHR.</p>
           <p>The panel is rendered with a random <code>panel-</code> class on each
             request, and the progress bar gets a random <code>widthX</code>
             class.</p>
           <p>With Turbolinks alone, the entire <code>&lt;body&gt;</code> would be
             replaced, and transitions would not happen. In this little demo
-            though, React adds and removes classes, and the attribute changes
-            are animated with CSS transitions.</p>
-          <p>The code that turns the <code>&lt;body&gt;</code> into a React
+            though, React adds and removes classes and text, and the attribute
+            changes are animated with CSS transitions. The DOM is otherwise
+            left in tact.</p>
+
+          <h3>The Code</h3>
+          <p>Reactize turns the <code>&lt;body&gt;</code> into a React
             element:
-            <a href="turbo-react-0.0.1.js">turbo-react-0.0.1.js</a></p>
-          <a class="btn btn-primary" href="/">Re-request this page</a> 
-          <p class="text-muted">
-            Requested at <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %>
-          </p>
+            <a href="reactize-0.0.1.js">reactize-0.0.1.js</a></p>
+          <p>Reactize is hooked into Turbolinks:
+            <a href="https://github.com/ssorallen/turbo-react/blob/master/public/turbolinks-1.4.0.js#L111">
+              turbolinks-1.4.0.js#L111</a></p>
+          <p>This whole app is on GitHub:
+            <a href="https://github.com/ssorallen/turbo-react/">
+              turbo-react</a></p>
+
+          <h3>Feedback</h3>
+          <p><a href="https://twitter.com/ssorallen?rel=author">@ssorallen</a></p>
         </div>
       </div>
     </div>

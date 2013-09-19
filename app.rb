@@ -11,6 +11,7 @@ PANEL_CLASSES = %w{
 
 get "/" do
   @panel_class = PANEL_CLASSES.sample
+  @request_time = Time.now
 
   erb :index
 end

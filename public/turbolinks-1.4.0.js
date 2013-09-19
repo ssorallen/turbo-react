@@ -108,8 +108,8 @@
   changePage = function(title, body, csrfToken, runScripts) {
     document.title = title;
 
-    if (React && React.applyDiff) {
-      React.applyDiff(body);
+    if (Reactize && Reactize.applyDiff) {
+      Reactize.applyDiff(body);
     } else {
       document.documentElement.replaceChild(body, document.body);
     }
