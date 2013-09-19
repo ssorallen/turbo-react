@@ -1,8 +1,0 @@
----
-  name: Turbolinks + React DOM Diffs
-  authors:
-    - Ross Allen
-  resources:
-    - http://fb.me/react-0.4.1.js
-    - http://fb.me/JSXTransformer-0.4.1.js
-    - https://billy-the-pale.s3.amazonaws.com/turbolinks.js
