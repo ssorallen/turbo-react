@@ -25,6 +25,23 @@ Reactize turns the `<body>` into a React element: [reactize.js](https://github.c
 
 Reactize is hooked into Turbolinks: [turbolinks-1.4.0.js#L111](https://github.com/ssorallen/turbo-react/blob/master/public/turbolinks-1.4.0.js#L111)
 
+
+#### Running locally
+
+1. Clone this repo
+
+        $ git clone git@github.com:ssorallen/turbo-react.git
+
+2. Install bundle dependencies
+
+        $ bundle install
+
+3. Run the server (change the port with the `-p` flag)
+
+        $ bundle exec rackup
+
+4. Visit the app: [http://localhost:9292](http://localhost:9292)
+
 ### Feedback
 
 Tweet at me: [@ssorallen](https://twitter.com/ssorallen?rel=author)
