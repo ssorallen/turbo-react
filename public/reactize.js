@@ -28,6 +28,8 @@
     return html.replace(CLASS_NAME_REGEX, " className=");
   };
 
+  Reactize.version = "0.2.0";
+
   window.onload = Reactize.applyBodyDiff;
 
   exports.Reactize = Reactize;

@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "react": "0.12.x"
+    "react": "0.12.x",
+    "turbolinks": "~2.4.1"
   }
 }
