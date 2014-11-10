@@ -1,5 +1,5 @@
 /**
- * Reactize v0.1.0
+ * Reactize v0.2.0
  */
 (function(exports) {
   var Reactize = {};
@@ -16,7 +16,7 @@
 
   Reactize.applyDiff = function(element) {
     var bod = Reactize.reactize(element);
-    React.renderComponent(bod, document.body);
+    React.render(bod, document.body);
   };
 
   Reactize.applyBodyDiff = function() {

@@ -16,6 +16,6 @@
     "tests"
   ],
   "dependencies": {
-    "react": "~0.11.1"
+    "react": "0.12.x"
   }
 }
