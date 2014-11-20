@@ -160,7 +160,7 @@
     triggerEvent(EVENTS.BEFORE_UNLOAD);
     document.title = title;
     if (Reactize && Reactize.applyDiff) {
-      Reactize.applyDiff(body);
+      Reactize.applyDiff(document.body, body);
     } else {
       document.documentElement.replaceChild(body, document.body);
     }
