@@ -14,9 +14,9 @@
     return eval(code);
   };
 
-  Reactize.applyDiff = function(current_element, new_element) {
-    var bod = Reactize.reactize(new_element);
-    React.render(bod, current_element);
+  Reactize.applyDiff = function(targetElement, replacementElement) {
+    var bod = Reactize.reactize(replacementElement);
+    React.render(bod, targetElement);
   };
 
   Reactize.applyBodyDiff = function() {
