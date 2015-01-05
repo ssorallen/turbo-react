@@ -5,7 +5,7 @@ var JSXTransformer = require("react-tools");
 var React = require("react");
 
 var Reactize = {
-  version: "0.4.0"
+  version: "0.4.1"
 };
 
 var converter = new HTMLtoJSX({createClass: false});
@@ -31,4 +31,4 @@ global.addEventListener("load", applyBodyDiff);
 // occur. Monkeypatch the method so Turbolinks can be used without modification.
 global.document.documentElement.replaceChild = Reactize.applyDiff;
 
-module.exports = Reactize;
+module.exports = global.Reactize = Reactize;
