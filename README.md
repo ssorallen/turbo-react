@@ -1,8 +1,7 @@
 # turbo-react
 
-This is a mix of React, React's JSX, and a slightly-modified Turbolinks
-that applies DOM "diffs" without any server configuration—it just
-needs plain old HTML.
+This is a mix of React, React's JSX, and Turbolinks that applies DOM "diffs"
+without any server configuration—it just needs plain old HTML.
 
 **Demo:** https://turbo-react.herokuapp.com/
 
@@ -21,9 +20,9 @@ The DOM is otherwise left in tact.
 
 ### The Code
 
-Reactize turns the `<body>` into a React element: [reactize.js](https://github.com/ssorallen/turbo-react/blob/master/public/reactize.js)
+Reactize turns the `<body>` into a React element: [reactize.js](https://github.com/ssorallen/turbo-react/blob/master/src/reactize.js)
 
-Reactize is hooked into Turbolinks: [turbolinks-reactize.js](https://github.com/ssorallen/turbo-react/blob/master/public/turbolinks-reactize.js#L163)
+Reactize is hooked into Turbolinks: [reactize.js#32](https://github.com/ssorallen/turbo-react/blob/master/src/reactize.js#L32)
 
 
 #### Running locally
@@ -40,7 +39,11 @@ Reactize is hooked into Turbolinks: [turbolinks-reactize.js](https://github.com/
 
         $ bundle exec rackup
 
-4. Visit the app: [http://localhost:9292](http://localhost:9292)
+4. Run Webpack in watch mode to recompile JS as it changes
+
+        $ webpack --progress --colors --watch
+
+5. Visit the app: [http://localhost:9292](http://localhost:9292)
 
 ### Feedback
 
