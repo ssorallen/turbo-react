@@ -2,18 +2,13 @@
 
 <html>
   <head>
-    <meta charset="utf-8">
     <title>Reactize :: Apply DOM diffs while serving plain old HTML</title>
     <link rel="author" href="https://twitter.com/ssorallen">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" media="screen">
     <link rel="stylesheet" href="/reactize.css" media="screen">
-
-    <script src="/bower_components/react/react.min.js"></script>
-    <script src="/bower_components/react/JSXTransformer.js"></script>
-    <script src="/reactize.js"></script>
-    <script src="/turbolinks-reactize.js"></script>
+    <script src="/dist/reactize.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -50,7 +45,7 @@
           <p>The panel is rendered with a random <code>panel-</code> class on each
             request, and the progress bar gets a random <code>widthX</code>
             class.</p>
-          <p>With Turbolinks alone, the entire <code>&lt;body&gt;</code> would be
+          <p>With Turbolinks alone, the entire <code>body</code> would be
             replaced, and transitions would not happen. In this little demo
             though, React adds and removes classes and text, and the attribute
             changes are animated with CSS transitions. The DOM is otherwise
@@ -58,7 +53,7 @@
 
           <h3>The Code</h3>
           <p>
-            Reactize turns the <code>&lt;body&gt;</code> into a React
+            Reactize turns the <code>body</code> into a React
             element: <a href="https://github.com/ssorallen/turbo-react/blob/master/public/reactize.js">reactize.js</a>
           </p>
           <p>
