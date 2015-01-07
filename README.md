@@ -35,15 +35,12 @@ Reactize is hooked into Turbolinks: [reactize.js#32](https://github.com/ssoralle
 
         $ bundle install
 
-3. Run the server (change the port with the `-p` flag)
+3. Run the server and watch JS changes
 
-        $ bundle exec rackup
-
-4. Run Webpack in watch mode to recompile JS as it changes
-
+        $ bundle exec rackup # Change the port with the `-p` flag
         $ webpack --progress --colors --watch
 
-5. Visit the app: [http://localhost:9292](http://localhost:9292)
+4. Visit the app: [http://localhost:9292](http://localhost:9292)
 
 ### Feedback
 
