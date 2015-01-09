@@ -1,4 +1,4 @@
-require("coffee!turbolinks");
+require("turbolinks");
 
 var HTMLtoJSX = require("htmltojsx");
 var JSXTransformer = require("react-tools");
