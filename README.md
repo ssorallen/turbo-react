@@ -31,9 +31,10 @@ Reactize is hooked into Turbolinks: [reactize.js#32](https://github.com/ssoralle
 
         $ git clone git@github.com:ssorallen/turbo-react.git
 
-2. Install bundle dependencies
+2. Install dependencies
 
         $ bundle install
+        $ npm install
 
 3. Run the server and watch JS changes
 
