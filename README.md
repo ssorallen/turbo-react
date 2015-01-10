@@ -38,7 +38,7 @@ Reactize is hooked into Turbolinks: [reactize.js#32](https://github.com/ssoralle
 
 3. Run the server and watch JS changes
 
-        $ bundle exec rackup # Change the port with the `-p` flag
+        $ bundle exec unicorn
         $ webpack --progress --colors --watch
 
 4. Visit the app: [http://localhost:9292](http://localhost:9292)
