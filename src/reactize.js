@@ -5,7 +5,7 @@ var JSXTransformer = require("react-tools");
 var React = require("react");
 
 var Reactize = {
-  version: "0.4.1"
+  version: REACTIZE_VERSION
 };
 
 var converter = new HTMLtoJSX({createClass: false});
