@@ -1,4 +1,11 @@
-require("turbolinks");
+var Turbolinks = require("exports?this.Turbolinks!turbolinks");
+
+/* Disable the Turbolinks page cache to prevent Tlinks from storing versions of
+ * pages with `react-id` attributes in them. When popping off the history, the
+ * `react-id` attributes cause React to treat the old page like a pre-rendered
+ * page and breaks diffing.
+ */
+Turbolinks.pagesCached(0);
 
 var HTMLtoJSX = require("htmltojsx");
 var JSXTransformer = require("react-tools");
