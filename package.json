@@ -1,6 +1,6 @@
 {
   "name": "turbo-react",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "This is a mix of React, React's JSX, and a slightly-modified Turbolinks that applies DOM \"diffs\" without any server configuration—it just needs plain old HTML.",
   "main": "./public/dist/reactize.js",
   "scripts": {
@@ -22,7 +22,7 @@
   "homepage": "https://github.com/ssorallen/turbo-react",
   "dependencies": {
     "exports-loader": "^0.6.2",
-    "htmltojsx": "^0.2.0",
+    "htmltojsx": "^0.2.1",
     "react": "^0.12.2",
     "react-tools": "^0.12.2",
     "turbolinks": "git://github.com/ssorallen/turbolinks"
