@@ -1,0 +1,42 @@
+---
+layout: base
+---
+
+<div class="book-cover">
+
+  {% if paginator.previous_page %}
+    {% assign previous_index = paginator.previous_page | minus:1 %}
+
+    <div class="page page-hidden" key="{{ previous_index }}">
+      {{ site.posts[previous_index].content }}
+    </div>
+  {% endif %}
+
+  <div class="page" key="{{ paginator.page | minus:1 }}">
+    {{ paginator.posts }}
+  </div>
+
+  {% if paginator.next_page %}
+    {% assign next_index = paginator.next_page | minus:1 %}
+
+    <div class="page page-hidden" key="{{ next_index }}">
+      {{ site.posts[next_index].content }}
+    </div>
+  {% endif %}
+
+</div>
+
+<div class="progress">
+  <div class="progress-fill"
+    style="width: {{ paginator.page | times:100 | divided_by:paginator.total_posts }}%;"></div>
+</div>
+
+{% if paginator.previous_page %}
+  <a href="{{ paginator.previous_page_path }}">
+    {{ paginator.previous_page_path }}
+  </a>
+{% endif %}
+
+{% if paginator.next_page %}
+  <a href="{{ paginator.next_page_path }}">{{ paginator.next_page_path }}</a>
+{% endif %}

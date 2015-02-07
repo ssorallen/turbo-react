@@ -18,7 +18,7 @@ module.exports = {
     })
   ],
   output: {
-    path: __dirname + "/public/dist",
+    path: __dirname + "/js",
     filename: "reactize.min.js"
   }
 };

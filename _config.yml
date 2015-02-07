@@ -1,0 +1,16 @@
+exclude:
+  - 'src/'
+  - '.gitignore'
+  - 'Gemfile*'
+  - 'LICENSE'
+  - 'node_modules'
+  - 'npm-debug.log'
+  - 'package.json'
+  - 'README.md'
+  - 'webpack.config.js'
+
+paginate: 1
+paginate_path: 'pages/:num/'
+
+sass:
+  style: :compressed

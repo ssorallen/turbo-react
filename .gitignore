@@ -1,2 +1,6 @@
-node_modules
+# Jekyll
+_site/
+
+# NPM
+node_modules/
 npm-debug.log
