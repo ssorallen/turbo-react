@@ -4,11 +4,44 @@ turbo-react applies only the differences between two HTML pages when navigating
 with links rather than create a new document, which enables CSS transitions
 between pages without needing a server.
 
+## Installation & Usage
+
+Include Reactize in the `<head>` of every document on your site. If you're using
+Jekyll (GitHub Pages), use a layout in the `_layouts` directory to write the
+script tag only once.
+
+1. Get turbo-react via NPM or download the latest release from GitHub:
+
+        npm install turbo-react
+
+  or
+
+      curl https://raw.githubusercontent.com/ssorallen/turbo-react/tree/v0.5.1/public/dist/reactize.min.js
+
+2. Include turbo-react in the `<head>` of each page of the site:
+
+    ```html
+    <!DOCTYPE html>
+    <html>
+      <head>
+        ...
+        <script src="path/to/reactize.min.js"></script>
+      </head>
+      <body>
+        ...
+      </body>
+    </html>
+    ```
+
 ## Examples
 
 ### Transitioning Background Colors
 
-Navigating between page1 and page2 shows a skyblue background and a yellow background that changes at once. After putting Reactize in the `<head>`, navigating between the pages will transition between the background colors because Reactize will add and remove the class names rather than start a new document.
+Navigating between page1 and page2 shows a skyblue background and a yellow
+background that changes at once. After putting Reactize in the `<head>`,
+navigating between the pages will transition between the background colors
+because Reactize will add and remove the class names rather than start a new
+document.
 
 ```css
 /* style.css */
