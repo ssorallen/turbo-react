@@ -2,7 +2,7 @@
   "name": "turbo-react",
   "version": "0.5.1",
   "description": "This is a mix of React, React's JSX, and a slightly-modified Turbolinks that applies DOM \"diffs\" without any server configuration—it just needs plain old HTML.",
-  "main": "./public/dist/reactize.js",
+  "main": "./public/dist/reactize.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
