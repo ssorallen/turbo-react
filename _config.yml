@@ -1,0 +1,14 @@
+exclude:
+  - 'src/'
+  - '.gitignore'
+  - 'Gemfile'
+  - 'Gemfile.lock'
+  - 'LICENSE'
+  - 'node_modules'
+  - 'npm-debug.log'
+  - 'package.json'
+  - 'README.md'
+  - 'webpack.config.js'
+
+sass:
+  style: :compressed
