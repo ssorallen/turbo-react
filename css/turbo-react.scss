@@ -1,0 +1,22 @@
+---
+---
+
+.row {
+  position: relative;
+}
+
+.col-absolute {
+  position: absolute;
+}
+
+.col-xs-3,
+.col-xs-6,
+.col-xs-8,
+.col-xs-9 {
+  transition: width 0.25s;
+}
+
+.col-xs-offset-2,
+.col-xs-offset-3 {
+  transition: margin-left 0.25s;
+}
