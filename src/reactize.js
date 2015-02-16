@@ -37,4 +37,12 @@ global.addEventListener("load", applyBodyDiff);
 // occur. Monkeypatch the method so Turbolinks can be used without modification.
 global.document.documentElement.replaceChild = Reactize.applyDiff;
 
-module.exports = global.Reactize = Reactize;
+// Expose Turbolinks as a global to allow configuration like enabling the
+// progress bar.
+global.Turbolinks = Turbolinks;
+
+// Expose Reactize as a global to allow usage.
+// * TODO: Consider whether there's value in exposing as a global?
+global.Reactize = Reactize;
+
+module.exports = Reactize;
