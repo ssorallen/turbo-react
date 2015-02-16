@@ -87,7 +87,7 @@ and Reactize. This feature is inherited from TurboReact's use of Turbolinks.
 
 ```html
 <a href="/foo/bar.html" data-no-turbolink>
-  Skip Turbolinks &amp; Reactize
+  Skip Turbolinks and Reactize
 </a>
 ```
 
