@@ -38,7 +38,7 @@ script tag only once.
 Add a
 [`data-no-turbolink` attribute](https://github.com/rails/turbolinks#opting-out-of-turbolinks)
 to any link that should load normally without being intercepted by Turbolinks
-and Reactize. This feature is inherited from TurboReact's use of Turbolinks.
+and Reactize. This feature is inherited from Reactize's use of Turbolinks.
 
 ```html
 <a href="/foo/bar.html" data-no-turbolink>
