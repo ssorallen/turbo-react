@@ -35,8 +35,9 @@ script tag only once.
 
 ### Enable a Progress Bar to Show Pageload Progress
 
-Enable the built in Turbolinks progress bar by calling Turbolinks after
-including Reactize.
+Enable the built-in
+[Turbolinks progress bar](https://github.com/rails/turbolinks#progress-bar) by
+calling Turbolinks after including Reactize on a page.
 
 ```html
 <!-- Reactize exposes `Turbolinks` as a global -->
