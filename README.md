@@ -33,6 +33,19 @@ script tag only once.
     </html>
     ```
 
+### Enable a Progress Bar to Show Pageload Progress
+
+Enable the built in Turbolinks progress bar by calling Turbolinks after
+including Reactize.
+
+```html
+<!-- Reactize exposes `Turbolinks` as a global -->
+<script src="reactize.min.js"></script>
+<script>
+  Turbolinks.enableProgressBar();
+</script>
+```
+
 ### Opting out of Turbolinks & Reactize
 
 Add a
