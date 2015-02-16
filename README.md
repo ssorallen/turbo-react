@@ -122,10 +122,9 @@ The DOM is otherwise left in tact.
 
 ### The Code
 
-Reactize turns the `<body>` into a React element: [reactize.js](https://github.com/ssorallen/turbo-react/blob/master/src/reactize.js)
-
-Reactize is hooked into Turbolinks: [reactize.js#32](https://github.com/ssorallen/turbo-react/blob/master/src/reactize.js#L32)
-
+Reactize turns the `<body>` into a React element and re-renders it after
+Turbolinks intercepts link navigations via XMLHttpRequest:
+[reactize.js](https://github.com/ssorallen/turbo-react/blob/master/src/reactize.js)
 
 #### Running locally
 
