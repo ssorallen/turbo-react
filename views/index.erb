@@ -30,15 +30,30 @@
               The Panel of Diff
             </div>
             <div class="panel-body">
-              The panel's class this time is <code><%= @panel_class %></code>.
+              <p>
+                The panel's class this time is <code><%= @panel_class %></code>.
+              </p>
+              <em class="text-muted">
+                Requested at <time><%= @request_time.strftime("%Y-%m-%d %H:%M:%S") %></time>
+              </em>
             </div>
           </div>
           <div class="progress progress-striped active">
             <div class="progress-bar progress-bar-success width<%= rand(21) * 5 %>"></div>
           </div>
           <p><a class="btn btn-primary" href="/">Re-request this page</a></p>
-          <p class="text-muted" title="<%= @request_time.to_s %>">
-            Requested at <%= @request_time.strftime("%Y-%m-%d %H:%M:%S") %>
+
+          <h4>Opting out of Turbolinks &amp; Reactize</h4>
+          <p>
+            Add the <code>data-no-turbolink</code></a> attribute
+            to links you want to <a href="https://github.com/rails/turbolinks#opting-out-of-turbolinks">ignore Turbolinks</a> and
+            Reactize. The link below has the attribute, and so clicking it will
+            load the page normally.
+          </p>
+          <p>
+            <a class="btn btn-default" href="/" data-no-turbolink>
+              Re-reqest page w/out Reactize
+            </a>
           </p>
 
           <h3>What it's doing</h3>

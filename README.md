@@ -78,6 +78,17 @@ body {
 </body>
 ```
 
+### Opting out of Turbolinks & Reactize
+
+Add a `data-no-turbolink` attribute to any link that should load normally
+without being intercepted by Turbolinks and Reactize.
+
+```html
+<a href="/foo/bar.html" data-no-turbolink>
+  Skip Turbolinks & Reactize
+</a>
+```
+
 ### How it Works
 
 **Demo:** https://turbo-react.herokuapp.com/
