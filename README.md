@@ -33,6 +33,19 @@ script tag only once.
     </html>
     ```
 
+### Opting out of Turbolinks & Reactize
+
+Add a
+[`data-no-turbolink` attribute](https://github.com/rails/turbolinks#opting-out-of-turbolinks)
+to any link that should load normally without being intercepted by Turbolinks
+and Reactize. This feature is inherited from TurboReact's use of Turbolinks.
+
+```html
+<a href="/foo/bar.html" data-no-turbolink>
+  Skip Turbolinks and Reactize
+</a>
+```
+
 ## Examples
 
 ### Transitioning Background Colors
@@ -76,19 +89,6 @@ body {
 <body class="bg-yellow">
   <a href="page1.html">Page 1</a>
 </body>
-```
-
-### Opting out of Turbolinks & Reactize
-
-Add a
-[`data-no-turbolink` attribute](https://github.com/rails/turbolinks#opting-out-of-turbolinks)
-to any link that should load normally without being intercepted by Turbolinks
-and Reactize. This feature is inherited from TurboReact's use of Turbolinks.
-
-```html
-<a href="/foo/bar.html" data-no-turbolink>
-  Skip Turbolinks and Reactize
-</a>
 ```
 
 ### How it Works
