@@ -1,3 +1,4 @@
+"use strict";
 var Turbolinks = require("exports?this.Turbolinks!turbolinks");
 
 // Disable the Turbolinks page cache to prevent Tlinks from storing versions of
