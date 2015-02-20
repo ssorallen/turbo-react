@@ -1,6 +1,6 @@
 {
   "name": "turbo-react",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "A JavaScript library that transitions between static HTML pages on navigation; no app server required.",
   "main": "./public/dist/reactize.min.js",
   "scripts": {
