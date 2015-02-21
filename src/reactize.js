@@ -26,7 +26,7 @@ var Reactize = {
       // load of what should have been the next page. Reactize should not
       // prevent navigation if there's an exception.
       if (nextDocument !== undefined && nextDocument.URL !== undefined) {
-        window.location.href = nextDocument.URL;
+        global.location.href = nextDocument.URL;
       }
     }
   },
@@ -37,7 +37,7 @@ var Reactize = {
   }
 };
 
-document.addEventListener("page:before-unload", function(event) {
+global.document.addEventListener("page:before-unload", function(event) {
   // Keep a reference to the next document to be loaded.
   nextDocument = event.target;
 });
