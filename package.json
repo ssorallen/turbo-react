@@ -24,8 +24,7 @@
     "exports-loader": "^0.6.2",
     "htmltojsx": "^0.2.1",
     "react": "^0.12.2",
-    "react-tools": "^0.12.2",
-    "turbolinks": "git://github.com/ssorallen/turbolinks"
+    "react-tools": "^0.12.2"
   },
   "devDependencies": {
     "coffee-loader": "^0.7.2",

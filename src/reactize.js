@@ -3,7 +3,7 @@
 var HTMLtoJSX = require("htmltojsx");
 var JSXTransformer = require("react-tools");
 var React = require("react");
-var Turbolinks = require("exports?this.Turbolinks!turbolinks");
+var Turbolinks = require("turbolinks");
 
 // Disable the Turbolinks page cache to prevent Tlinks from storing versions of
 // pages with `react-id` attributes in them. When popping off the history, the
@@ -52,13 +52,5 @@ global.document.addEventListener("DOMContentLoaded", applyBodyDiff);
 // Turbolinks calls `replaceChild` on the document element when an update should
 // occur. Monkeypatch the method so Turbolinks can be used without modification.
 global.document.documentElement.replaceChild = Reactize.applyDiff;
-
-// Expose Turbolinks as a global to allow configuration like enabling the
-// progress bar.
-global.Turbolinks = Turbolinks;
-
-// Expose Reactize as a global to allow usage.
-// * TODO: Consider whether there's value in exposing as a global?
-global.Reactize = Reactize;
 
 module.exports = Reactize;
