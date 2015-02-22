@@ -33,6 +33,33 @@ script tag only once.
     </html>
     ```
 
+### Enable a Progress Bar to Show Pageload Progress
+
+Enable the built-in
+[Turbolinks progress bar](https://github.com/rails/turbolinks#progress-bar) by
+calling Turbolinks after including Reactize on a page.
+
+```html
+<!-- Reactize exposes `Turbolinks` as a global -->
+<script src="reactize.min.js"></script>
+<script>
+  Turbolinks.enableProgressBar();
+</script>
+```
+
+### Opting out of Turbolinks & Reactize
+
+Add a
+[`data-no-turbolink` attribute](https://github.com/rails/turbolinks#opting-out-of-turbolinks)
+to any link that should load normally without being intercepted by Turbolinks
+and Reactize. This feature is inherited from Reactize's use of Turbolinks.
+
+```html
+<a href="/foo/bar.html" data-no-turbolink>
+  Skip Turbolinks and Reactize
+</a>
+```
+
 ## Examples
 
 ### Transitioning Background Colors
@@ -95,10 +122,9 @@ The DOM is otherwise left in tact.
 
 ### The Code
 
-Reactize turns the `<body>` into a React element: [reactize.js](https://github.com/ssorallen/turbo-react/blob/master/src/reactize.js)
-
-Reactize is hooked into Turbolinks: [reactize.js#32](https://github.com/ssorallen/turbo-react/blob/master/src/reactize.js#L32)
-
+Reactize turns the `<body>` into a React element and re-renders it after
+Turbolinks intercepts link navigations via XMLHttpRequest:
+[reactize.js](https://github.com/ssorallen/turbo-react/blob/master/src/reactize.js)
 
 #### Running locally
 

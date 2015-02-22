@@ -1,3 +1,8 @@
+"use strict";
+
+var HTMLtoJSX = require("htmltojsx");
+var JSXTransformer = require("react-tools");
+var React = require("react");
 var Turbolinks = require("exports?this.Turbolinks!turbolinks");
 
 // Disable the Turbolinks page cache to prevent Tlinks from storing versions of
@@ -6,35 +11,54 @@ var Turbolinks = require("exports?this.Turbolinks!turbolinks");
 // page and breaks diffing.
 Turbolinks.pagesCached(0);
 
-var HTMLtoJSX = require("htmltojsx");
-var JSXTransformer = require("react-tools");
-var React = require("react");
+var converter = new HTMLtoJSX({createClass: false});
+var nextDocument;
 
 var Reactize = {
-  version: REACTIZE_VERSION
+  version: REACTIZE_VERSION,
+
+  applyDiff: function(replacementElement, targetElement) {
+    try {
+      var bod = Reactize.reactize(replacementElement);
+      React.render(bod, targetElement);
+    } catch(e) {
+      // If any problem occurs when updating content, send the browser to a full
+      // load of what should have been the next page. Reactize should not
+      // prevent navigation if there's an exception.
+      if (nextDocument !== undefined && nextDocument.URL !== undefined) {
+        global.location.href = nextDocument.URL;
+      }
+    }
+  },
+
+  reactize: function(element) {
+    var code = JSXTransformer.transform(converter.convert(element.innerHTML));
+    return eval(code);
+  }
 };
 
-var converter = new HTMLtoJSX({createClass: false});
-
-Reactize.reactize = function(element) {
-  var code = JSXTransformer.transform(converter.convert(element.innerHTML));
-  return eval(code);
-};
-
-Reactize.applyDiff = function(replacementElement, targetElement) {
-  var bod = Reactize.reactize(replacementElement);
-  React.render(bod, targetElement);
-};
+global.document.addEventListener("page:before-unload", function(event) {
+  // Keep a reference to the next document to be loaded.
+  nextDocument = event.target;
+});
 
 function applyBodyDiff() {
   Reactize.applyDiff(document.body, document.body);
-  global.removeEventListener("load", applyBodyDiff);
+  global.document.removeEventListener("DOMContentLoaded", applyBodyDiff);
 }
 
-global.addEventListener("load", applyBodyDiff);
+global.document.addEventListener("DOMContentLoaded", applyBodyDiff);
 
 // Turbolinks calls `replaceChild` on the document element when an update should
 // occur. Monkeypatch the method so Turbolinks can be used without modification.
 global.document.documentElement.replaceChild = Reactize.applyDiff;
 
-module.exports = global.Reactize = Reactize;
+// Expose Turbolinks as a global to allow configuration like enabling the
+// progress bar.
+global.Turbolinks = Turbolinks;
+
+// Expose Reactize as a global to allow usage.
+// * TODO: Consider whether there's value in exposing as a global?
+global.Reactize = Reactize;
+
+module.exports = Reactize;
