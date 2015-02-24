@@ -16,7 +16,7 @@ script tag only once.
 
   or
 
-      curl https://raw.githubusercontent.com/ssorallen/turbo-react/tree/v0.5.1/public/dist/reactize.min.js
+      curl https://raw.githubusercontent.com/ssorallen/turbo-react/tree/v0.7.0/public/dist/reactize.min.js
 
 2. Include turbo-react in the `<head>` of each page of the site:
 
