@@ -23,8 +23,8 @@
   "dependencies": {
     "exports-loader": "^0.6.2",
     "htmltojsx": "^0.2.1",
-    "react": "^0.12.2",
-    "react-tools": "^0.12.2",
+    "react": "^0.13.0",
+    "react-tools": "^0.13.0",
     "turbolinks": "git://github.com/ssorallen/turbolinks"
   },
   "devDependencies": {
