@@ -1,7 +1,7 @@
 {
   "name": "turbo-react",
   "version": "0.7.0",
-  "description": "A JavaScript library that transitions between static HTML pages on navigation; no app server required.",
+  "description": "Transitions between static HTML pages; no app server required.",
   "main": "./public/dist/reactize.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
