@@ -1,15 +1,18 @@
 "use strict";
 
+if (global.Turbolinks === undefined) {
+  throw "Missing Turbolinks dependency. TurboReact requires Turbolinks be included before it.";
+}
+
 var HTMLtoJSX = require("htmltojsx");
 var JSXTransformer = require("react-tools");
 var React = require("react");
-var Turbolinks = require("exports?this.Turbolinks!turbolinks");
 
 // Disable the Turbolinks page cache to prevent Tlinks from storing versions of
 // pages with `react-id` attributes in them. When popping off the history, the
 // `react-id` attributes cause React to treat the old page like a pre-rendered
 // page and breaks diffing.
-Turbolinks.pagesCached(0);
+global.Turbolinks.pagesCached(0);
 
 var converter = new HTMLtoJSX({createClass: false});
 var nextDocument;
@@ -52,9 +55,5 @@ global.document.addEventListener("DOMContentLoaded", applyBodyDiff);
 // Turbolinks calls `replaceChild` on the document element when an update should
 // occur. Monkeypatch the method so Turbolinks can be used without modification.
 global.document.documentElement.replaceChild = Reactize.applyDiff;
-
-// Expose Turbolinks as a global to allow configuration like enabling the
-// progress bar.
-global.Turbolinks = Turbolinks;
 
 module.exports = Reactize;
