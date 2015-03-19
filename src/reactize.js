@@ -57,8 +57,4 @@ global.document.documentElement.replaceChild = Reactize.applyDiff;
 // progress bar.
 global.Turbolinks = Turbolinks;
 
-// Expose Reactize as a global to allow usage.
-// * TODO: Consider whether there's value in exposing as a global?
-global.Reactize = Reactize;
-
 module.exports = Reactize;
