@@ -14,6 +14,12 @@ var React = require("react");
 // page and breaks diffing.
 global.Turbolinks.pagesCached(0);
 
+// `documentElement.replaceChild` must be called in the context of the
+// `documentElement`. Keep a bound reference to use later.
+var originalReplaceChild =
+  global.document.documentElement.replaceChild.bind(
+    global.document.documentElement);
+
 var converter = new HTMLtoJSX({createClass: false});
 
 var Reactize = {
@@ -37,21 +43,15 @@ var Reactize = {
   }
 };
 
+// Turbolinks calls `replaceChild` on the document element when an update should
+// occur. Monkeypatch the method so Turbolinks can be used without modification.
+global.document.documentElement.replaceChild = Reactize.applyDiff;
+
 function applyBodyDiff() {
   Reactize.applyDiff(document.body, document.body);
   global.document.removeEventListener("DOMContentLoaded", applyBodyDiff);
 }
 
 global.document.addEventListener("DOMContentLoaded", applyBodyDiff);
-
-// `documentElement.replaceChild` must be called in the context of the
-// `documentElement`. Keep a bound reference to use later.
-var originalReplaceChild =
-  global.document.documentElement.replaceChild.bind(
-    global.document.documentElement);
-
-// Turbolinks calls `replaceChild` on the document element when an update should
-// occur. Monkeypatch the method so Turbolinks can be used without modification.
-global.document.documentElement.replaceChild = Reactize.applyDiff;
 
 module.exports = Reactize;
