@@ -15,7 +15,6 @@ var React = require("react");
 global.Turbolinks.pagesCached(0);
 
 var converter = new HTMLtoJSX({createClass: false});
-var nextDocument;
 
 var Reactize = {
   version: REACTIZE_VERSION,
@@ -25,12 +24,10 @@ var Reactize = {
       var bod = Reactize.reactize(replacementElement);
       React.render(bod, targetElement);
     } catch(e) {
-      // If any problem occurs when updating content, send the browser to a full
-      // load of what should have been the next page. Reactize should not
-      // prevent navigation if there's an exception.
-      if (nextDocument !== undefined && nextDocument.URL !== undefined) {
-        global.location.href = nextDocument.URL;
-      }
+      // If any problem occurs when updating content, let Turbolinks replace
+      // the page normally. That means no transitions, but it also means no
+      // broken pages.
+      originalReplaceChild(replacementElement, targetElement);
     }
   },
 
@@ -40,17 +37,18 @@ var Reactize = {
   }
 };
 
-global.document.addEventListener("page:before-unload", function(event) {
-  // Keep a reference to the next document to be loaded.
-  nextDocument = event.target;
-});
-
 function applyBodyDiff() {
   Reactize.applyDiff(document.body, document.body);
   global.document.removeEventListener("DOMContentLoaded", applyBodyDiff);
 }
 
 global.document.addEventListener("DOMContentLoaded", applyBodyDiff);
+
+// `documentElement.replaceChild` must be called in the context of the
+// `documentElement`. Keep a bound reference to use later.
+var originalReplaceChild =
+  global.document.documentElement.replaceChild.bind(
+    global.document.documentElement);
 
 // Turbolinks calls `replaceChild` on the document element when an update should
 // occur. Monkeypatch the method so Turbolinks can be used without modification.
