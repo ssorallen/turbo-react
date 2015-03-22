@@ -6,8 +6,10 @@
     <link rel="author" href="https://twitter.com/ssorallen">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" media="screen">
     <link rel="stylesheet" href="/reactize.css" media="screen">
+
+    <script src="/lib/turbolinks.js"></script>
     <script src="/dist/reactize.min.js"></script>
   </head>
   <body>
@@ -32,6 +34,12 @@
               </li>
             <% end %>
           </ul>
+
+          <% if request.path_info == "/onefish" %>
+            <!-- Uncomment to test transitions between broken pages. -->
+            <!-- <a xlink:href="/"> -->
+          <% end %>
+
           <% (1..2).each do |i| %>
             <div class="fish <% if i <= (@fish_count || 1) %>fish-in<% end %> <%= @fish_class || '' %>">
               <div class="fish-body">
