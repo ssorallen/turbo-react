@@ -117,7 +117,7 @@ Turbolinks intercepts link navigations via XMLHttpRequest:
 
 1. Clone this repo
 
-        $ git clone git@github.com:ssorallen/turbo-react.git
+        $ git clone https://github.com/ssorallen/turbo-react.git
 
 2. Install dependencies
 
