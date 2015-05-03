@@ -1,6 +1,6 @@
 {
   "name": "turbo-react",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Transitions between static HTML pages; no app server required.",
   "main": "./public/dist/turbo-react.min.js",
   "scripts": {
