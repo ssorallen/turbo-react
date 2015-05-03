@@ -25,6 +25,7 @@ script tag only once.
     <html>
       <head>
         ...
+        <script src="path/to/turbolinks.js"></script>
         <script src="path/to/turbo-react.min.js"></script>
       </head>
       <body>
