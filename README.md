@@ -1,14 +1,16 @@
-# turbo-react
+# TurboReact
 
-turbo-react applies only the differences between two HTML pages when navigating
+TurboReact applies only the differences between two HTML pages when navigating
 with links rather than create a new document, which enables CSS transitions
 between pages without needing a server.
 
 ## Installation & Usage
 
-Include TurboReact in the `<head>` of every document on your site. If you're using
-Jekyll (GitHub Pages), use a layout in the `_layouts` directory to write the
-script tag only once.
+TurboReact is a plugin for [Turbolinks](https://github.com/rails/turbolinks),
+which means Turbolinks is required. Include both Turbolinks and TurboReact in
+the `<head>` of every document on your site. If you're using Jekyll (GitHub
+Pages), use a layout in the `_layouts` directory to write the script tag only
+once.
 
 1. Get turbo-react via NPM or download the latest release from GitHub:
 
