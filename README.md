@@ -6,7 +6,7 @@ between pages without needing a server.
 
 ## Installation & Usage
 
-Include Reactize in the `<head>` of every document on your site. If you're using
+Include TurboReact in the `<head>` of every document on your site. If you're using
 Jekyll (GitHub Pages), use a layout in the `_layouts` directory to write the
 script tag only once.
 
@@ -25,7 +25,7 @@ script tag only once.
     <html>
       <head>
         ...
-        <script src="path/to/reactize.min.js"></script>
+        <script src="path/to/turbo-react.min.js"></script>
       </head>
       <body>
         ...
@@ -33,16 +33,16 @@ script tag only once.
     </html>
     ```
 
-### Opting out of Turbolinks & Reactize
+### Opting out of Turbolinks & TurboReact
 
 Add a
 [`data-no-turbolink` attribute](https://github.com/rails/turbolinks#opting-out-of-turbolinks)
 to any link that should load normally without being intercepted by Turbolinks
-and Reactize. This feature is inherited from Reactize's use of Turbolinks.
+and TurboReact. This feature is inherited from TurboReacts's use of Turbolinks.
 
 ```html
 <a href="/foo/bar.html" data-no-turbolink>
-  Skip Turbolinks and Reactize
+  Skip Turbolinks and TurboReact
 </a>
 ```
 
@@ -51,9 +51,9 @@ and Reactize. This feature is inherited from Reactize's use of Turbolinks.
 ### Transitioning Background Colors
 
 Navigating between page1 and page2 shows a skyblue background and a yellow
-background that changes at once. After putting Reactize in the `<head>`,
+background that changes at once. After putting TurboReact in the `<head>`,
 navigating between the pages will transition between the background colors
-because Reactize will add and remove the class names rather than start a new
+because TurboReact will add and remove the class names rather than start a new
 document.
 
 ```css
@@ -108,9 +108,9 @@ The DOM is otherwise left in tact.
 
 ### The Code
 
-Reactize turns the `<body>` into a React element and re-renders it after
+TurboReact turns the `<body>` into a React element and re-renders it after
 Turbolinks intercepts link navigations via XMLHttpRequest:
-[reactize.js](https://github.com/ssorallen/turbo-react/blob/master/src/reactize.js)
+[turbo-react.js](https://github.com/ssorallen/turbo-react/blob/master/src/turbo-react.js)
 
 #### Running locally
 

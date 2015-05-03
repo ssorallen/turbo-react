@@ -22,12 +22,12 @@ var originalReplaceChild =
 
 var converter = new HTMLtoJSX({createClass: false});
 
-var Reactize = {
-  version: REACTIZE_VERSION,
+var TurboReact = {
+  version: TURBO_REACT_VERSION,
 
   applyDiff: function(replacementElement, targetElement) {
     try {
-      var bod = Reactize.reactize(replacementElement);
+      var bod = TurboReact.reactize(replacementElement);
       React.render(bod, targetElement);
     } catch(e) {
       // If any problem occurs when updating content, let Turbolinks replace
@@ -45,13 +45,13 @@ var Reactize = {
 
 // Turbolinks calls `replaceChild` on the document element when an update should
 // occur. Monkeypatch the method so Turbolinks can be used without modification.
-global.document.documentElement.replaceChild = Reactize.applyDiff;
+global.document.documentElement.replaceChild = TurboReact.applyDiff;
 
 function applyBodyDiff() {
-  Reactize.applyDiff(document.body, document.body);
+  TurboReact.applyDiff(document.body, document.body);
   global.document.removeEventListener("DOMContentLoaded", applyBodyDiff);
 }
 
 global.document.addEventListener("DOMContentLoaded", applyBodyDiff);
 
-module.exports = Reactize;
+module.exports = TurboReact;

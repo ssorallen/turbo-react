@@ -1,7 +1,7 @@
 var webpack = require("webpack");
 
 module.exports = {
-  entry: __dirname + "/src/reactize.js",
+  entry: __dirname + "/src/turbo-react.js",
   plugins: [
     new webpack.DefinePlugin({
       // Force HTMLtoJSX to use the in-browser `document` object rather than
@@ -9,11 +9,11 @@ module.exports = {
       IN_BROWSER: true,
 
       // Expose the version to embed in the final file.
-      REACTIZE_VERSION: JSON.stringify(require("./package.json").version)
+      TURBO_REACT_VERSION: JSON.stringify(require("./package.json").version)
     })
   ],
   output: {
     path: __dirname + "/public/dist",
-    filename: "reactize.min.js"
+    filename: "turbo-react.min.js"
   }
 };

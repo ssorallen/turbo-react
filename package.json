@@ -2,9 +2,11 @@
   "name": "turbo-react",
   "version": "0.7.0",
   "description": "Transitions between static HTML pages; no app server required.",
-  "main": "./public/dist/reactize.min.js",
+  "main": "./public/dist/turbo-react.min.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack -p",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --progress --colors --watch"
   },
   "repository": {
     "type": "git",
