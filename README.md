@@ -127,7 +127,7 @@ Turbolinks intercepts link navigations via XMLHttpRequest:
 3. Run the server and watch JS changes
 
         $ bundle exec unicorn
-        $ webpack --progress --colors --watch
+        $ npm run-script watch
 
 4. Visit the app: [http://localhost:9292](http://localhost:9292)
 
