@@ -21,8 +21,8 @@ the `<head>` of every document on your site.
 
 2. Install the updated set of gems:
 
-    ```bash
-    bundle install
+    ```sh
+    $ bundle install
     ```
 
 3. Require the "turbo-react" library after "turbolinks" on every page, for
@@ -33,15 +33,19 @@ the `<head>` of every document on your site.
     //= require turbo-react
     ```
 
-### Manual
+### Plain HTML and Other Frameworks
 
 1. Get turbo-react via NPM or download the latest release from GitHub:
 
-        npm install turbo-react
+    ```sh
+    $ npm install turbo-react
+    ```
+   
+   or
 
-  or
-
-      curl https://raw.githubusercontent.com/ssorallen/turbo-react/tree/v0.8.0/public/dist/turbo-react.min.js
+    ```sh
+    $ curl https://raw.githubusercontent.com/ssorallen/turbo-react/tree/v0.8.0/public/dist/turbo-react.min.js
+    ```
 
 2. Include turbo-react in the `<head>` of each page of the site after
    Turbolinks:
