@@ -8,9 +8,32 @@ between pages without needing a server.
 
 TurboReact is a plugin for [Turbolinks](https://github.com/rails/turbolinks),
 which means Turbolinks is required. Include both Turbolinks and TurboReact in
-the `<head>` of every document on your site. If you're using Jekyll (GitHub
-Pages), use a layout in the `_layouts` directory to write the script tag only
-once.
+the `<head>` of every document on your site.
+
+### Ruby on Rails
+
+1. Add the [`turbo_react-rails`](https://github.com/ssorallen/turbo_react-rails)
+   gem to your Gemfile:
+
+    ```
+    gem 'turbo_react-rails'
+    ```
+
+2. Install the updated set of gems:
+
+    ```bash
+    bundle install
+    ```
+
+3. Require the "turbo-react" library after "turbolinks" on every page, for
+   example in "application.js" if it is on every page:
+
+    ```js
+    //= require turbolinks
+    //= require turbo-react
+    ```
+
+### Manual
 
 1. Get turbo-react via NPM or download the latest release from GitHub:
 
@@ -20,7 +43,8 @@ once.
 
       curl https://raw.githubusercontent.com/ssorallen/turbo-react/tree/v0.8.0/public/dist/turbo-react.min.js
 
-2. Include turbo-react in the `<head>` of each page of the site:
+2. Include turbo-react in the `<head>` of each page of the site after
+   Turbolinks:
 
     ```html
     <!DOCTYPE html>
