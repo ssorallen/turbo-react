@@ -24,8 +24,8 @@
   "homepage": "https://github.com/ssorallen/turbo-react",
   "dependencies": {
     "htmltojsx": "^0.2.4",
-    "react": "^0.13.0",
-    "react-tools": "^0.13.0"
+    "react": "^0.13.3",
+    "react-tools": "^0.13.3"
   },
   "devDependencies": {
     "gulp": "^3.8.11",
