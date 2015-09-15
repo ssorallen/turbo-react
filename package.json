@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/ssorallen/turbo-react",
   "dependencies": {
-    "htmltojsx": "^0.2.1",
+    "htmltojsx": "^0.2.4",
     "react": "^0.13.0",
     "react-tools": "^0.13.0"
   },
