@@ -1,6 +1,6 @@
 {
   "name": "turbo-react",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "description": "Transitions between static HTML pages; no app server required.",
   "main": "./public/dist/turbo-react.min.js",
   "scripts": {
@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/ssorallen/turbo-react",
   "dependencies": {
-    "htmltojsx": "0.2.4",
+    "htmltojsx": "0.2.5",
     "react": "0.13.3",
     "react-tools": "0.13.3"
   },
