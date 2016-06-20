@@ -7,6 +7,7 @@ if (window.Turbolinks === undefined) {
 var HTMLtoJSX = require("htmltojsx");
 var JSXTransformer = require("react-tools");
 var React = require("react");
+var ReactDOM = require("react-dom");
 
 // Disable the Turbolinks page cache to prevent Tlinks from storing versions of
 // pages with `react-id` attributes in them. When popping off the history, the
@@ -28,7 +29,7 @@ var TurboReact = {
   applyDiff: function(replacementElement, targetElement) {
     try {
       var bod = TurboReact.reactize(replacementElement);
-      React.render(bod, targetElement);
+      ReactDOM.render(bod, targetElement);
     } catch(e) {
       // If any problem occurs when updating content, let Turbolinks replace
       // the page normally. That means no transitions, but it also means no
