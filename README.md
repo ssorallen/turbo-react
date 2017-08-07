@@ -44,7 +44,7 @@ the `<head>` of every document on your site.
    or
 
     ```sh
-    $ curl https://raw.githubusercontent.com/ssorallen/turbo-react/tree/v0.8.0/public/dist/turbo-react.min.js
+    $ curl https://raw.githubusercontent.com/ssorallen/turbo-react/v0.9.0/public/dist/turbo-react.min.js
     ```
 
 2. Include turbo-react in the `<head>` of each page of the site after
