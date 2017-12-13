@@ -2,7 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     kgio (2.9.3)
-    rack (1.6.0)
+    rack (1.6.8)
     rack-protection (1.5.3)
       rack
     raindrops (0.13.0)
@@ -22,3 +22,6 @@ PLATFORMS
 DEPENDENCIES
   sinatra
   unicorn
+
+BUNDLED WITH
+   1.10.6
