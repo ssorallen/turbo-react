@@ -38,9 +38,9 @@ the `<head>` of every document on your site.
 1. Get turbo-react via NPM or download the latest release from GitHub:
 
     ```sh
-    $ npm install turbo-react
+    $ yarn install turbo-react
     ```
-   
+
    or
 
     ```sh
@@ -152,11 +152,11 @@ Turbolinks intercepts link navigations via XMLHttpRequest:
 2. Install dependencies
 
         $ bundle install
-        $ npm install
+        $ yarn install
 
 3. Run the server and watch JS changes
 
         $ bundle exec unicorn
-        $ npm run-script watch
+        $ yarn watch
 
 4. Visit the app: [http://localhost:9292](http://localhost:9292)
