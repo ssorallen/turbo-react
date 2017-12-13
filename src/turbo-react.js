@@ -4,8 +4,8 @@ if (window.Turbolinks === undefined) {
   throw "Missing Turbolinks dependency. TurboReact requires Turbolinks be included before it.";
 }
 
+var Babel = require("@babel/standalone");
 var HTMLtoJSX = require("htmltojsx");
-var JSXTransformer = require("react-tools");
 var React = require("react");
 var ReactDOM = require("react-dom");
 
@@ -39,7 +39,10 @@ var TurboReact = {
   },
 
   reactize: function(element) {
-    var code = JSXTransformer.transform(converter.convert(element.innerHTML));
+    var code = Babel.transform(
+      converter.convert(element.innerHTML),
+      {presets: ['es2015', 'react']}
+    ).code;
     return eval(code);
   }
 };
