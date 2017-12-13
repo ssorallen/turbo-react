@@ -160,7 +160,3 @@ Turbolinks intercepts link navigations via XMLHttpRequest:
         $ npm run-script watch
 
 4. Visit the app: [http://localhost:9292](http://localhost:9292)
-
-### Feedback
-
-Tweet at me: [@ssorallen](https://twitter.com/ssorallen?rel=author)
